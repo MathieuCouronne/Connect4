@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const restart = document.getElementById('restart');
   window.modal = document.getElementById('modal');
 
+  // To restart the game when click on the button
   restart.addEventListener('click', function () {
     // Function to restart the game
     victory = false;
@@ -20,12 +21,12 @@ document.addEventListener('DOMContentLoaded', function () {
     for (let row = 0; row < 6; row++) {
       for (let col = 0; col < 7; col++) {
         const cell = document.getElementById(`cell-${col}-${row}`);
-        // cell.textContent = '';
         cell.removeAttribute(attributeName);
       }
     }
   });
 
+  // When player click on a cell
   function handleClick(cell, col, row) {
     if (cell.hasAttribute(attributeName))
       return;
@@ -46,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  // create grid
   for (let row = 0; row < 6; row++) {
     for (let col = 0; col < 7; col++) {
       const cell = document.createElement('div');
